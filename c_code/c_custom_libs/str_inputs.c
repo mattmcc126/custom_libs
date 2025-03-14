@@ -89,11 +89,11 @@ char* fgetsdyn() {
 
 // Useful testing / usecase info
 int main() {
-    // ---- uncomment below to get test of getlinesdyn() ----
-    char* buffer = getlinesdyn();
-    fputs(buffer, stdout);
-    free (buffer);
-    // ------------------------------------------------------
+    // // ---- uncomment below to get test of getlinesdyn() ----
+    // char* buffer = getlinesdyn();
+    // fputs(buffer, stdout);
+    // free (buffer);
+    // // ------------------------------------------------------
 
     // // ---- uncomment below to get test of fgetsdyn() -------
     // char* buffer = fgetsdyn();

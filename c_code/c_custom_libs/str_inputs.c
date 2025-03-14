@@ -7,6 +7,7 @@
  * gets multiple lines of stdin using getline
  * Only works if POSIX is supported by system
  * Usage example: char* buffer = fgetsdyn()
+ * Remember to free buffer after use
  * 
  * -- types -- 
  * input -> None
@@ -48,6 +49,7 @@ char* getlinesdyn() {
  * -- General Info -- 
  * gets multiple lines of stdin using dyn malloc on a buffer
  * Usage example: char* buffer = fgetsdyn();
+ * Remember to free buffer after use
  * 
  * -- types -- 
  * input -> None
@@ -85,19 +87,4 @@ char* fgetsdyn() {
     // add termination character, return inputed lines
     buffer[pos] = '\0';
     return buffer;
-}
-
-// Useful testing / usecase info
-int main() {
-    // // ---- uncomment below to get test of getlinesdyn() ----
-    // char* buffer = getlinesdyn();
-    // fputs(buffer, stdout);
-    // free (buffer);
-    // // ------------------------------------------------------
-
-    // // ---- uncomment below to get test of fgetsdyn() -------
-    // char* buffer = fgetsdyn();
-    // fputs(buffer, stdout);
-    // free(buffer);
-    // // ------------------------------------------------------
 }

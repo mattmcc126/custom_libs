@@ -22,10 +22,9 @@ char* getlinesdyn() {
     
     // read until EOF or empty line
     while ((line_len = getline(&line, &line_cap, stdin)) != -1) {
-    
         // resize buff, using realloc
-        char *new_buffer = realloc(buffer, content_size + line_len + 1);
-        if (!new_buffer) {
+        char *new_buffer = realloc(buffer, content_size + line_len + 1); 
+        if (new_buffer == NULL) {
             free(buffer);
             free(line);
             perror("Error with allocating new buffer");
@@ -88,10 +87,17 @@ char* fgetsdyn() {
     return buffer;
 }
 
-// TEMP
+// Useful testing / usecase info
 int main() {
     // ---- uncomment below to get test of getlinesdyn() ----
     char* buffer = getlinesdyn();
     fputs(buffer, stdout);
+    free (buffer);
     // ------------------------------------------------------
+
+    // // ---- uncomment below to get test of fgetsdyn() -------
+    // char* buffer = fgetsdyn();
+    // fputs(buffer, stdout);
+    // free(buffer);
+    // // ------------------------------------------------------
 }
